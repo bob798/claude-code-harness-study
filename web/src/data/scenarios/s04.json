@@ -1,0 +1,51 @@
+{
+  "version": "s04",
+  "title": "子 Agent",
+  "description": "将大任务拆分给拥有独立上下文的子 Agent",
+  "steps": [
+    {
+      "type": "user_message",
+      "content": "分析这个仓库，并分别总结前端和后端架构",
+      "annotation": "用户提出范围较大的分析任务"
+    },
+    {
+      "type": "assistant_text",
+      "content": "这个任务适合拆分。我会启动一个子 agent 去看前端部分。",
+      "annotation": "模型决定通过委派来隔离上下文"
+    },
+    {
+      "type": "tool_call",
+      "content": "task: 总结前端架构",
+      "toolName": "task",
+      "annotation": "主 agent 调用子 agent 工具"
+    },
+    {
+      "type": "system_event",
+      "content": "前端使用 Next.js App Router、组件化结构和本地化文案。",
+      "annotation": "子 agent 返回聚焦结果"
+    },
+    {
+      "type": "tool_result",
+      "content": "现在我来检查后端部分，然后合并两边结论。",
+      "toolName": "task",
+      "annotation": "主 agent 保持主线清晰，不被前端细节污染"
+    },
+    {
+      "type": "tool_call",
+      "content": "agents/",
+      "toolName": "write_file",
+      "annotation": "主 agent 继续检查另一部分代码库"
+    },
+    {
+      "type": "tool_result",
+      "content": "...",
+      "toolName": "write_file",
+      "annotation": "读取结果返回"
+    },
+    {
+      "type": "assistant_text",
+      "content": "总结如下：前端负责可视化与教学页面，后端 agent 示例负责核心模式演示。",
+      "annotation": "主 agent 综合自身结果与子 agent 结果后答复用户"
+    }
+  ]
+}

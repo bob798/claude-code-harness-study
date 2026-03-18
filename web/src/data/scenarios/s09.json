@@ -1,0 +1,44 @@
+{
+  "version": "s09",
+  "title": "Agent 团队",
+  "description": "通过持久化队友和异步邮箱实现多 Agent 协作",
+  "steps": [
+    {
+      "type": "user_message",
+      "content": "把这个重构任务拆给两位队友：一个看 API，一个看前端",
+      "annotation": "用户请求团队协作"
+    },
+    {
+      "type": "tool_call",
+      "content": "我会创建两个队友，并分别分派子任务。",
+      "toolName": "teammate_manager",
+      "annotation": "主 agent 决定组织团队"
+    },
+    {
+      "type": "system_event",
+      "content": "spawn teammate: api\nspawn teammate: frontend",
+      "annotation": "系统创建可持续存在的队友 agent"
+    },
+    {
+      "type": "tool_call",
+      "content": "队友已就绪",
+      "toolName": "send_message",
+      "annotation": "团队成员可以独立执行"
+    },
+    {
+      "type": "system_event",
+      "content": "send message -> api: 审查后端接口\nsend message -> frontend: 审查页面交互",
+      "annotation": "主 agent 通过邮箱发送任务"
+    },
+    {
+      "type": "system_event",
+      "content": "消息已投递",
+      "annotation": "异步邮箱完成投递"
+    },
+    {
+      "type": "assistant_text",
+      "content": "我会先继续主线工作，稍后再收取结果。",
+      "annotation": "协作不阻塞主 agent 的主线程"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "s12",
+  "title": "Worktree + 任务隔离",
+  "description": "为每个任务提供独立目录，避免并行修改互相干扰",
+  "steps": [
+    {
+      "type": "user_message",
+      "content": "并行处理后端认证重构和前端登录页面",
+      "annotation": "用户请求多个并发开发任务"
+    },
+    {
+      "type": "tool_call",
+      "content": "我会给每个任务创建独立 worktree。",
+      "toolName": "task_manager",
+      "annotation": "模型决定将任务与目录绑定"
+    },
+    {
+      "type": "tool_call",
+      "content": "create_worktree: auth-refactor\ncreate_worktree: ui-login",
+      "toolName": "worktree_manager",
+      "annotation": "系统为不同任务创建隔离目录"
+    },
+    {
+      "type": "system_event",
+      "content": "worktree 已创建并绑定到对应任务",
+      "annotation": "执行平面现在按任务隔离"
+    },
+    {
+      "type": "tool_call",
+      "content": "这样两个 agent 可以并行修改代码而互不影响。",
+      "toolName": "worktree_run",
+      "annotation": "目录隔离避免未提交变更互相污染"
+    },
+    {
+      "type": "tool_call",
+      "content": "git status --short",
+      "toolName": "worktree_manager",
+      "annotation": "在某个 worktree 内执行命令"
+    },
+    {
+      "type": "system_event",
+      "content": "...",
+      "annotation": "结果只反映该隔离目录的状态"
+    },
+    {
+      "type": "assistant_text",
+      "content": "Task board handles coordination, worktrees handle isolation. Parallel tracks stay clean and auditable.",
+      "annotation": "Coordinate in one board, isolate by lane only where needed, and run optional policy/audit side effects from lifecycle events"
+    }
+  ]
+}

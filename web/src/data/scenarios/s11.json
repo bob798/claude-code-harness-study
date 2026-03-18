@@ -1,0 +1,44 @@
+{
+  "version": "s11",
+  "title": "自主 Agent",
+  "description": "队友会自己扫描任务板并主动认领工作",
+  "steps": [
+    {
+      "type": "user_message",
+      "content": "创建几个任务，然后让队友自己找活做",
+      "annotation": "用户希望减少人工分派"
+    },
+    {
+      "type": "tool_call",
+      "content": "我会让队友进入空闲轮询模式，自行查看任务板。",
+      "toolName": "task_manager",
+      "annotation": "系统切换到更自主的团队模式"
+    },
+    {
+      "type": "tool_result",
+      "content": "idle()",
+      "toolName": "task_manager",
+      "annotation": "队友在空闲时轮询邮箱和任务板"
+    },
+    {
+      "type": "system_event",
+      "content": "auto-claimed: task-3",
+      "annotation": "某个队友自动认领了可执行任务"
+    },
+    {
+      "type": "system_event",
+      "content": "很好，队友已经自己接手工作了。",
+      "annotation": "主 agent 不必逐条下达指令"
+    },
+    {
+      "type": "system_event",
+      "content": "/team",
+      "annotation": "查看当前团队状态"
+    },
+    {
+      "type": "assistant_text",
+      "content": "alice: in_progress\nbob: idle",
+      "annotation": "团队状态对主 agent 可见"
+    }
+  ]
+}

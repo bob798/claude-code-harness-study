@@ -1,0 +1,56 @@
+{
+  "version": "s08",
+  "title": "后台任务",
+  "description": "把慢操作放到后台执行，让 agent 继续推进其他工作",
+  "steps": [
+    {
+      "type": "user_message",
+      "content": "运行完整测试套件，并同时继续修文档",
+      "annotation": "用户要求并行处理慢任务和快任务"
+    },
+    {
+      "type": "assistant_text",
+      "content": "我会把测试放到后台，然后继续处理文档。",
+      "annotation": "模型决定使用后台任务机制"
+    },
+    {
+      "type": "tool_call",
+      "content": "run_in_background: pytest",
+      "toolName": "background_task",
+      "annotation": "耗时命令交给后台线程"
+    },
+    {
+      "type": "system_event",
+      "content": "后台任务已启动：task-17",
+      "annotation": "系统返回任务 ID"
+    },
+    {
+      "type": "tool_result",
+      "content": "在测试运行期间，我先更新 README。",
+      "toolName": "background_task",
+      "annotation": "主循环继续前进，不被阻塞"
+    },
+    {
+      "type": "tool_call",
+      "content": "edit README.md",
+      "toolName": "bash",
+      "annotation": "模型处理另一项工作"
+    },
+    {
+      "type": "tool_result",
+      "content": "后台通知：task-17 已完成，2 个测试失败。",
+      "toolName": "bash",
+      "annotation": "完成事件异步注入上下文"
+    },
+    {
+      "type": "system_event",
+      "content": "我收到了测试结果，现在去修复失败项。",
+      "annotation": "Agent 根据异步通知调整后续计划"
+    },
+    {
+      "type": "assistant_text",
+      "content": "Linting is fixed. Tests finished: 47 passed, 2 failed. I'll fix the failing tests now.",
+      "annotation": "Non-blocking execution via threads + queue enables parallel work"
+    }
+  ]
+}

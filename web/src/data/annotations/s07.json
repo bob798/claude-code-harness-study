@@ -1,0 +1,61 @@
+{
+  "version": "s07",
+  "decisions": [
+    {
+      "id": "file-based-persistence",
+      "title": "任务存储为 JSON 文件，而非内存",
+      "description": "任务以 JSON 文件形式持久化在 .tasks/ 目录中，而非保存在内存里。这有三个关键好处：(1) 任务在进程崩溃后仍然存在——如果 agent 在任务中途崩溃，重启后任务板仍在磁盘上；(2) 多个 agent 可以读写同一任务目录，无需共享内存即可实现多代理协调；(3) 人类可以查看和手动编辑任务文件来调试。文件系统就是共享数据库。",
+      "alternatives": "内存存储（例如 v2 的 TodoWrite）更简单也更快，但进程崩溃就会丢状态，也无法跨多个 agent 进程协作。正式数据库（SQLite、Redis）能提供 ACID 保证和更强并发能力，但也带来依赖和运维复杂度。文件是零依赖、处处可用的持久化层。",
+      "zh": {
+        "title": "任务存储为 JSON 文件，而非内存",
+        "description": "任务以 JSON 文件形式持久化在 .tasks/ 目录中，而非保存在内存里。这有三个关键好处：(1) 任务在进程崩溃后仍然存在——如果 agent 在任务中途崩溃，重启后任务板仍在磁盘上；(2) 多个 agent 可以读写同一任务目录，无需共享内存即可实现多代理协调；(3) 人类可以查看和手动编辑任务文件来调试。文件系统就是共享数据库。"
+      },
+      "ja": {
+        "title": "任务存储为 JSON 文件，而非内存",
+        "description": "任务以 JSON 文件形式持久化在 .tasks/ 目录中，而非保存在内存里。这有三个关键好处：(1) 任务在进程崩溃后仍然存在——如果 agent 在任务中途崩溃，重启后任务板仍在磁盘上；(2) 多个 agent 可以读写同一任务目录，无需共享内存即可实现多代理协调；(3) 人类可以查看和手动编辑任务文件来调试。文件系统就是共享数据库。"
+      }
+    },
+    {
+      "id": "dependency-graph",
+      "title": "任务具有 blocks/blockedBy 依赖字段",
+      "description": "每个任务可以声明它阻塞哪些任务（下游依赖）以及它被哪些任务阻塞（上游依赖）。Agent 不会开始有未解决 blockedBy 依赖的任务。这对多代理协调至关重要：当 Agent A 在编写数据库 schema、Agent B 需要写查询时，Agent B 的任务被 Agent A 的任务阻塞。没有依赖关系，两个 agent 可能同时开始，而 Agent B 会针对一个尚不存在的 schema 工作。",
+      "alternatives": "简单优先级排序（高/中/低）无法表达“任务 B 必须等任务 A 完成后才能开始”这种硬依赖。由中央协调器统一顺序分配也可以，但会形成单点瓶颈。声明式依赖让每个 agent 都能通过读取任务文件，独立判断自己现在能做什么。",
+      "zh": {
+        "title": "任务具有 blocks/blockedBy 依赖字段",
+        "description": "每个任务可以声明它阻塞哪些任务（下游依赖）以及它被哪些任务阻塞（上游依赖）。Agent 不会开始有未解决 blockedBy 依赖的任务。这对多代理协调至关重要：当 Agent A 在编写数据库 schema、Agent B 需要写查询时，Agent B 的任务被 Agent A 的任务阻塞。没有依赖关系，两个 agent 可能同时开始，而 Agent B 会针对一个尚不存在的 schema 工作。"
+      },
+      "ja": {
+        "title": "任务具有 blocks/blockedBy 依赖字段",
+        "description": "每个任务可以声明它阻塞哪些任务（下游依赖）以及它被哪些任务阻塞（上游依赖）。Agent 不会开始有未解决 blockedBy 依赖的任务。这对多代理协调至关重要：当 Agent A 在编写数据库 schema、Agent B 需要写查询时，Agent B 的任务被 Agent A 的任务阻塞。没有依赖关系，两个 agent 可能同时开始，而 Agent B 会针对一个尚不存在的 schema 工作。"
+      }
+    },
+    {
+      "id": "task-default-todo-coexistence",
+      "title": "Task 为课程主线，Todo 仍有适用场景",
+      "description": "TaskManager 延续了 Todo 的心智模型，并在本课程 s07 之后成为默认主线。两者都管理带状态的任务项，但 TaskManager 增加了文件持久化（崩溃后可恢复）、依赖追踪（blocks/blockedBy）、owner 字段与多进程协作能力。Todo 仍适合短、线性、一次性的轻量跟踪。",
+      "alternatives": "只用 Todo 能让模型保持最简，但对长时运行或协作场景支持偏弱。反过来，所有事情都只用 Task 会让系统更一致，却会让一次性的小任务显得过重。",
+      "zh": {
+        "title": "Task 为课程主线，Todo 仍有适用场景",
+        "description": "TaskManager 延续了 Todo 的心智模型，并在本课程 s07 之后成为默认主线。两者都管理带状态的任务项，但 TaskManager 增加了文件持久化（崩溃后可恢复）、依赖追踪（blocks/blockedBy）、owner 字段与多进程协作能力。Todo 仍适合短、线性、一次性的轻量跟踪。"
+      },
+      "ja": {
+        "title": "Task 为课程主线，Todo 仍有适用场景",
+        "description": "TaskManager 延续了 Todo 的心智模型，并在本课程 s07 之后成为默认主线。两者都管理带状态的任务项，但 TaskManager 增加了文件持久化（崩溃后可恢复）、依赖追踪（blocks/blockedBy）、owner 字段与多进程协作能力。Todo 仍适合短、线性、一次性的轻量跟踪。"
+      }
+    },
+    {
+      "id": "task-write-discipline",
+      "title": "持久化仍需要写入纪律",
+      "description": "文件持久化能降低上下文丢失，但不会自动消除并发写入风险。写任务状态前应先重读 JSON、校验 `status/blockedBy` 是否符合预期，再原子写回，避免不同 agent 悄悄覆盖彼此状态。",
+      "alternatives": "无脑整文件覆盖写入虽然简单，但在并行执行时可能破坏协调状态。数据库里的乐观锁能提供更强安全性，但这套课程选择保留文件状态，目的是维持零依赖的教学路线。",
+      "zh": {
+        "title": "持久化仍需要写入纪律",
+        "description": "文件持久化能降低上下文丢失，但不会自动消除并发写入风险。写任务状态前应先重读 JSON、校验 `status/blockedBy` 是否符合预期，再原子写回，避免不同 agent 悄悄覆盖彼此状态。"
+      },
+      "ja": {
+        "title": "持久化仍需要写入纪律",
+        "description": "文件持久化能降低上下文丢失，但不会自动消除并发写入风险。写任务状态前应先重读 JSON、校验 `status/blockedBy` 是否符合预期，再原子写回，避免不同 agent 悄悄覆盖彼此状态。"
+      }
+    }
+  ]
+}

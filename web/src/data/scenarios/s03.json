@@ -1,0 +1,53 @@
+{
+  "version": "s03",
+  "title": "TodoWrite",
+  "description": "为多步骤任务加入显式规划与进度跟踪",
+  "steps": [
+    {
+      "type": "user_message",
+      "content": "重构 auth.py，将验证和授权拆分为独立函数",
+      "annotation": "用户提出多步骤重构任务"
+    },
+    {
+      "type": "tool_call",
+      "content": "我会先列出步骤，再逐个执行。",
+      "toolName": "todo_write",
+      "annotation": "模型决定先调用 TodoWrite 进行规划"
+    },
+    {
+      "type": "tool_result",
+      "content": "1. 读取 auth.py\n2. 找出验证与授权逻辑\n3. 拆分为两个函数\n4. 更新调用点\n5. 验证结果",
+      "toolName": "todo_write",
+      "annotation": "TodoWrite 记录计划"
+    },
+    {
+      "type": "tool_call",
+      "content": "待办事项已更新",
+      "toolName": "write_file",
+      "annotation": "计划现在对模型可见，并在后续步骤中持续存在"
+    },
+    {
+      "type": "tool_result",
+      "content": "先读取 auth.py，定位需要拆分的逻辑。",
+      "toolName": "write_file",
+      "annotation": "有了计划后，模型开始执行第一步"
+    },
+    {
+      "type": "tool_call",
+      "content": "auth.py",
+      "toolName": "bash",
+      "annotation": "读取文件以获取当前实现"
+    },
+    {
+      "type": "tool_result",
+      "content": "...",
+      "toolName": "bash",
+      "annotation": "文件内容返回"
+    },
+    {
+      "type": "assistant_text",
+      "content": "步骤 1 完成。接下来开始提取函数。",
+      "annotation": "模型更新内部状态并继续执行计划"
+    }
+  ]
+}
