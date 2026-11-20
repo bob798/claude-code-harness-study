@@ -60,3 +60,7 @@ Publish paired task-level raw metrics, run conditions, confidence intervals, eff
 ## Suggested first original test
 
 **H2 reentrancy under interruption:** compare local-variables streaming coroutine and reentrant step with the *same* permission/tool semantics, with independent external effect oracle and a **real process restart**. Examine whether reentrancy reduces reconstruction complexity or safety failures, and whether it increases per-step overhead. This is a deliberately scoped follow-up, not a promise of statistically significant differences.
+
+## 2D distinction exposed by Rungta article audit
+
+**Model decision authority and runtime scheduling are orthogonal variables.** A model-led decision policy can run inside a long-lived `while` or a Goose-style reentrant step. A fixed workflow can also be implemented either way. **The A0-04 streaming-vs-step arms hold decision policy constant**, so they cannot test whether model-led autonomy outperforms graph-constrained planning. See [Rungta source audit](RUNGTA_ARTICLE_AUDIT.md) and [A0-04-03](../A0-04-loop-comparison/A0-04-03-REPORT.md).
