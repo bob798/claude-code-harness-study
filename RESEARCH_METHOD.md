@@ -74,3 +74,7 @@ Every iteration must explicitly state which model (if any) the experiment invoke
 ## 9. Research scope admission gate
 
 Before adding an experiment or a major implementation path, evaluate the [three-part Research Scope Gate](RESEARCH_GATE.md): evidence/ethics (mandatory), Agent Loop relevance, and experimental readiness. Save the gate outcome and decision; redirect valuable adjacent questions to a documented backlog rather than silently continuing scope expansion.
+
+## 10. Observation tooling vs empirical results
+
+Test success of an NDJSON parser on synthetic fixtures does **not** count as a live Claude Code trace. Reports must explicitly separate: official specification, source-analysis hypothesis, synthetic instrumentation tests, and observed versioned product behavior. No live-model conclusion without a recorded authenticated execution.
