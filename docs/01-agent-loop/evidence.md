@@ -11,3 +11,7 @@
 ## Rules
 
 Do not treat the leaked source map as an open-source license. Keep direct quotations brief and attributed. Do not upload proprietary source files. Prefer official docs for public behavior and independently testable evidence for performance claims.
+
+## A0-03 — source claim audit (2026-11-20)
+
+A0-03 verified the historical v2.1.88 source-map publication incident and reviewed pinned VILA-Lab and cablate analysis documents. **No original source-map bytes were authenticated or inspected in this study, hence there are no S-tier internal function claims.** See [A0-03 report](../../research/A0-03-source-control-flow/REPORT.md) and [source claim registry](../../research/A0-03-source-control-flow/SOURCE_CLAIMS.md). The official Claude API tool-use loop is an API contract, not proof of an identical CLI implementation.
