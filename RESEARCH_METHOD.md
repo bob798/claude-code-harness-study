@@ -70,3 +70,7 @@ For every completed iteration, append to the topic-specific `DECISION_LOG.md`: o
 ## 8. Model and source provenance
 
 Every iteration must explicitly state which model (if any) the experiment invoked, whether tools were mocked or real, and exactly which source claim motivated the implementation. Separate third-party descriptions from independently observed Claude Code behavior. Reference: [R1 model and source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md).
+
+## 9. Research scope admission gate
+
+Before adding an experiment or a major implementation path, evaluate the [three-part Research Scope Gate](RESEARCH_GATE.md): evidence/ethics (mandatory), Agent Loop relevance, and experimental readiness. Save the gate outcome and decision; redirect valuable adjacent questions to a documented backlog rather than silently continuing scope expansion.
