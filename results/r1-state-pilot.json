@@ -1,0 +1,18 @@
+{
+  "study": "R1 explicit state vs local variables",
+  "status": "exploratory deterministic mock pilot",
+  "date": "2026-11-20",
+  "scenarios": 5,
+  "equal_traces": 5,
+  "while_violating_runs": 0,
+  "typed_state_violating_runs": 0,
+  "unit_tests_passed": 4,
+  "conclusion": "Implementation parity smoke test; no evidence of differential reliability",
+  "limitations": [
+    "No real model",
+    "Five small scripted cases",
+    "No concurrent actions or process restarts",
+    "Not prospective preregistration",
+    "Not actual Claude Code"
+  ]
+}
