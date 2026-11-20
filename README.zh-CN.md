@@ -20,3 +20,9 @@
 [实验报告](research/02-agent-loop/R1-ITERATION-02.md) · [研究方向调整记录](research/02-agent-loop/DECISION_LOG.md)
 
 将三种实现对比：局部变量、类型化 State、类型化 State + 转换校验。258 条短事件序列中，前两者均有 249 条接受了不允许的事件；加入规则校验后为 0 条。此结果只针对人为定义的事件模型，并非 Claude Code 实测。推荐使用“执行安全约束”，首次说明其形式化概念为 *Invariant*。
+
+## R1-03：崩溃与取消恢复
+
+[实验报告](research/02-agent-loop/R1-ITERATION-03.md) · [模型和源码依据说明](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [研究决策日志](research/02-agent-loop/DECISION_LOG.md)
+
+本轮**不调用任何 LLM**。五个脚本化事件场景显示：同等策略下，类型化 State 与普通局部状态表现一致；Checkpoint 保存取消状态后，重启不再发起新的已取消工具操作，但外部操作已提交、回执丢失时仍需幂等与核对。不是 Claude Code 运行实测。
