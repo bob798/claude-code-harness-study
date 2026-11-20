@@ -4,7 +4,7 @@ import pathlib
 import sys
 import unittest
 
-source = pathlib.Path(__file__).resolve().parents[1] / "scripts" / "trace_summary.py"
+source = pathlib.Path(__file__).with_name("trace_summary.py")
 spec = importlib.util.spec_from_file_location("a002_trace_summary", source)
 module = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = module
