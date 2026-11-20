@@ -6,6 +6,12 @@
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
+## A0-04-03: pinned open benchmark vectors and Rungta article audit
+
+[**A0-04-03 benchmark comparison**](research/A0-04-loop-comparison/A0-04-03-REPORT.md) · [**Reusable adapter and tests**](experiments/a0_04_03_bench/benchmark.py) · [**Results**](results/a0-04-03-adapted-bench.json) · [**Rungta architecture essay audit**](research/A0-03-source-control-flow/RUNGTA_ARTICLE_AUDIT.md)
+
+Local execution: 11 unit tests passed; both arms satisfied 21 **upstream-derived input vectors** and 10 **locally authored boundary extensions** with an identical scripted policy. This is **not** an official upstream benchmark run or a Claude Code/Goose product comparison. A separate deterministic two-host stale-snapshot interleaving demonstrated one effect after a competing cancellation; **no real concurrency** was used. The Rungta essay (2026-02-17) offers conceptual design insights but not original v2.1.88 source verification. **Model autonomy and reentrant scheduling are independent axes.**
+
 ## A0-04-02 approval handoff pilot + open benchmarks
 
 [**Approval handoff report**](research/A0-04-loop-comparison/A0-04-02-REPORT.md) · [**Open benchmark inventory**](research/A0-04-loop-comparison/OPEN_BENCHMARKS.md) · [**Controller code**](experiments/a0_04_02_approval/experiment.py) · [**Regression tests**](experiments/a0_04_02_approval/test_experiment.py)
