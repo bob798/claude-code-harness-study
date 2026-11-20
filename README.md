@@ -2,9 +2,15 @@
 
 **Evidence-first analysis, independent implementations, and reproducible experiments for LLM Agent Harness engineering.**
 
-[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Research scope gate](RESEARCH_GATE.md) · [A0-01 evidence map](research/A0-01-agent-loop-path/REPORT.md) · [A0-02 observability report](research/A0-01-agent-loop-path/A0-02-REPORT.md) · [A0-02b public traces](research/A0-01-agent-loop-path/A0-02B-REPORT.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
+[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Research scope gate](RESEARCH_GATE.md) · [A0-01 evidence map](research/A0-01-agent-loop-path/REPORT.md) · [A0-03 source audit](research/A0-03-source-control-flow/REPORT.md) · [A0-02 observability report](research/A0-01-agent-loop-path/A0-02-REPORT.md) · [A0-02b public traces](research/A0-01-agent-loop-path/A0-02B-REPORT.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
+
+## Current mainline: A0-03 source-claim audit
+
+[**A0-03 report**](research/A0-03-source-control-flow/REPORT.md) · [**source claim registry**](research/A0-03-source-control-flow/SOURCE_CLAIMS.md) · [**next verification steps**](research/A0-03-source-control-flow/NEXT_STEPS.md)
+
+We confirmed the historical v2.1.88 source-map exposure and cross-checked two pinned third-party architectural reports. **No original leaked source-map artifact was retrieved and authenticated; no function-level claim is labeled source-verified (S).** Current module call graphs remain version-scoped third-party evidence (T), not official source facts.
 
 ## Current mainline: A0-01 evidence-first Agent Loop mapping
 
