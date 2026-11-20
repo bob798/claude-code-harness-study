@@ -2,7 +2,7 @@
 
 **Evidence-first analysis, independent implementations, and reproducible experiments for LLM Agent Harness engineering.**
 
-[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Exposure plan](EXPOSURE_PLAN.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
+[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 state study](research/02-agent-loop/R1-PROTOCOL.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
@@ -18,6 +18,15 @@ python experiments/loop_recovery/experiment.py
 ```
 
 This small deterministic **mock** experiment compares blind retry and stable idempotency-key retry. It tests an independent design, **not Claude Code itself**; results should not be generalized to production agents.
+
+## R1 pilot: explicit State vs local variables
+
+Five deterministic scenarios produced identical traces and zero invariant violations in both matched variants. This is a **mock smoke test**, not evidence that State increases reliability. [Protocol and limitations](research/02-agent-loop/R1-PROTOCOL.md).
+
+```bash
+python -m unittest discover -s experiments/r1_state -p 'test_*.py' -v
+python experiments/r1_state/experiment.py
+```
 
 ## Research method
 
