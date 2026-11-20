@@ -6,6 +6,12 @@
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
+## A0-04-02 approval handoff pilot + open benchmarks
+
+[**Approval handoff report**](research/A0-04-loop-comparison/A0-04-02-REPORT.md) · [**Open benchmark inventory**](research/A0-04-loop-comparison/OPEN_BENCHMARKS.md) · [**Controller code**](experiments/a0_04_02_approval/experiment.py) · [**Regression tests**](experiments/a0_04_02_approval/test_experiment.py)
+
+Six scripted approval/deny/cancel/reentry tests showed matched results in both arms. The simulator's streaming-style arm reconstructs from a checkpoint; this limits its value as a live-stack vs reentrant architecture comparison. **These tests are not a public benchmark**, and no real Claude Code, Goose or LLM was run. Next priority: reuse third-party approved-action boundary and fault suites and independently validate effect oracles.
+
 ## A0-04 pilot: streaming loop vs reentrant step
 
 [**Controlled comparison report**](research/A0-04-loop-comparison/REPORT.md) · [**Independent implementation**](experiments/a0_04_loop_comparison/experiment.py) · [**Results**](results/a0-04-pilot.json)
