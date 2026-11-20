@@ -66,3 +66,7 @@ Use paired task runs when feasible and randomized run ordering. For model evalua
 For every completed iteration, append to the topic-specific `DECISION_LOG.md`: original research question and expectation, observed evidence (including negative results), competing interpretation, explicit change in direction, why the change is justified, and the next test capable of disproving the revised hypothesis. Do not erase previous direction changes or relabel post-hoc exploration as preregistered evidence. [R1 example](research/02-agent-loop/DECISION_LOG.md).
 
 **Terminology:** prefer **执行安全约束** (execution safety constraints) for reader-facing Chinese explanations, introduce formal *invariant* in parentheses when technically required, and use **执行安全约束违规率** for the measured proportion. A state representation is distinct from enforcement of those rules.
+
+## 8. Model and source provenance
+
+Every iteration must explicitly state which model (if any) the experiment invoked, whether tools were mocked or real, and exactly which source claim motivated the implementation. Separate third-party descriptions from independently observed Claude Code behavior. Reference: [R1 model and source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md).
