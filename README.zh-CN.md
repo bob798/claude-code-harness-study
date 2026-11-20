@@ -38,3 +38,9 @@
 [公开样本核查报告](research/A0-01-agent-loop-path/A0-02B-REPORT.md) · [数据来源](research/A0-01-agent-loop-path/a0_02/DATA_SOURCES.md) · [Session JSONL 解析器](research/A0-01-agent-loop-path/a0_02/session_analyzer.py)
 
 已检查 Trace Commons 上的 Claude Code v2.1.177 公开会话展示，能看到工具调用与中断标记。当前环境无法下载完整原始文件，因此**未宣称完成真实会话全量指标统计**。新增适配器与 5 项合成数据测试均已完成；下一步需要固定数据集版本并取得可复算的摘要。
+
+## A0-03 · Claude Code v2.1.88 源码证据核验
+
+[源码分析报告](research/A0-03-source-control-flow/REPORT.md) · [证据与函数登记](research/A0-03-source-control-flow/SOURCE_CLAIMS.md)
+
+已核验 v2.1.88 意外发布 Source Map 的历史事件，并读取固定版本的两份第三方架构分析。目前并**未**独立取得、校验和检查原始 Source Map，因此暂时没有任何函数级事实升级为“经源码核验（S）”；所有内部函数对应关系仍标为第三方分析（T）。允许将经验证源码作为强证据，但不意味着可以再分发专有源码。
