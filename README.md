@@ -2,7 +2,7 @@
 
 **Evidence-first analysis, independent implementations, and reproducible experiments for LLM Agent Harness engineering.**
 
-[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 state study](research/02-agent-loop/R1-PROTOCOL.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
+[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
@@ -26,6 +26,15 @@ Five deterministic scenarios produced identical traces and zero invariant violat
 ```bash
 python -m unittest discover -s experiments/r1_state -p 'test_*.py' -v
 python experiments/r1_state/experiment.py
+```
+
+## R1 iteration 02: representation vs enforced transitions
+
+In a deliberately permissive deterministic toy model, **249/258** short traces accepted at least one disallowed event with either local variables or typed State. Adding a transition validator rejected all specified illegal events (**0/258** violating traces). This isolates a rule-enforcement mechanism, **not** a Claude Code observation or proof that typed State improves reliability. [Analysis and limitations](research/02-agent-loop/R1-ITERATION-02.md).
+
+```bash
+python -m unittest discover -s experiments/r1_transitions -p 'test_*.py' -v
+python experiments/r1_transitions/experiment.py
 ```
 
 ## Research method
