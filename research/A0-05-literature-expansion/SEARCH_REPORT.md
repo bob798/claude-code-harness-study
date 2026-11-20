@@ -59,7 +59,7 @@ The incremental value of another unscoped Claude Code v2.1.88 source-map walkthr
 | E-06 | [Beyond the Model: Demystifying Harness Effects](https://arxiv.org/abs/2609.32459) (2026-09) | Modular harness studies show component effects vary across models/task complexity | Need inspect exact experiments before asserting numerical gain; not a direct Loop syntax test | P1 |
 | E-07 | [Harness Engineering: 11 source-code systems](https://arxiv.org/abs/2609.00006) (2026-09) | Source-code design taxonomy and longitudinal observations across multiple coding harnesses | Comparative architecture, not causal measured performance | P1 |
 | E-08 | [Rethinking the Evaluation of Harness Evolution](https://arxiv.org/abs/2607.12227) (2026-07) | Warns harness optimization evaluated on the same public task suite risks adaptive overfitting; compare search budgets | Methods caution; not product evidence | P1 |
-| E-09 | [Rethinking Harness Evolution via Retrospective Adaptation](https://arxiv.org/abs/2610.34938) (2026-10) | Studies whether harness modifications after prior sessions improve later tasks | Separate learning/adaptation branch, not current Loop representation study | P2 |
+| E-09 | [How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation](https://arxiv.org/abs/2610.34938) (2026-10) | Studies whether harness modifications after prior sessions improve later tasks | Separate learning/adaptation branch, not current Loop representation study | P2 |
 
 ## D. Public trace data (what usage can, and cannot, establish)
 
