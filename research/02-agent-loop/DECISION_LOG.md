@@ -35,3 +35,16 @@ Changing the research direction **after** seeing pilot evidence is valid scienti
 - **Interpretation:** authorization semantics and state guards, not the API surface alone, explain parity. Synthetic tests cannot establish real-world performance or structure superiority.
 - **Decision/change:** label tests regression fixtures, add external benchmark inventory, prioritize independent approval-to-effect vectors, action mutation, stale approvals and real concurrent signal races. Keep real product comparison separate.
 - **Next falsification:** use a pinned third-party suite with independent effect oracle and matched controllers; track exact upstream tests vs custom adaptations, resume complexity and runtime overhead.
+
+## A0-04-03 · 2026-11-21 — pinned open vectors and stale-state counterexample
+- **Initial:** replace solely self-authored synthetic tasks with source-attributable open benchmark scenarios while holding two loop arms at functional parity.
+- **Observation:** 11 local unittest cases passed; 21 adapted aymaw AgentBench scenario configurations and 10 authored action-boundary extensions passed in both arms. Upstream original runner was not executed; no real LLM. Separately, deterministic stale-copy interleaving let one host commit after the other cancelled. These are not concurrent-product observations.
+- **Interpretation:** equal policy naturally yields equal results. Pinning third-party scenarios increases reproducibility, but no true architectural treatment effect is isolated yet; shared state consistency is a separate issue.
+- **Decision:** stop claiming unit-test coverage as evidence of product superiority; report all adapted/original provenance and note a single unresolved coordination defect. Prioritize realistic host transfer and independent effect oracle.
+- **Next:** fixed independent boundary benchmark subset + actual concurrent events under common CAS policy, and measured control transfer overhead rather than more toy cases.
+
+## Source review · 2026-11-21 — Vikash Rungta article
+- **Initial:** assess whether `Claude Code Architecture (Reverse Engineered)` provides new source-level results relevant to A0-04.
+- **Observation:** published 2026-02-17, before March source-map incident; methodological disclaimer says public docs, traces, filesystem and behavior—not leaked source. Claimed 50-line loop, fixed compaction threshold, Esc-as-rollback and broad bypass semantics are not sufficiently supported or need qualification against official docs.
+- **Decision:** classify T-CONCEPT; reuse design/failure-mode taxonomy only, not internal function attribution. Correct research dimension conflation: model-led decision vs host-reentrant scheduling are orthogonal.
+- **Next:** preserve same model autonomy across streaming/reentrant arms; test decision-policy autonomy only in a distinct orthogonal experiment. See `research/A0-03-source-control-flow/RUNGTA_ARTICLE_AUDIT.md`.
