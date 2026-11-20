@@ -1,0 +1,62 @@
+# Research Method / 固定研究方法
+
+> Version 1.0 · 2026-11-20. This document governs every research iteration in this repository. A finding must be auditable, falsifiable and independently reproducible.
+
+## 1. Research loop
+
+1. **Define a bounded question**: specify system boundary, workload, independent variable, outcomes, and exclusion criteria.
+2. **Gather lawful evidence**: official docs and public behavior first; classify third-party reverse engineering as secondary evidence. Log source URL, author, publication date, version and claim-level support.
+3. **Form competing explanations**: identify at least one alternative explanation and a null hypothesis; distinguish mechanism assumptions from observations.
+4. **Pre-register an experiment**: primary metric, baseline, treatment, dataset, stopping rule, fault matrix and falsification criterion **before** observing outcomes.
+5. **Implement minimal comparable systems**: same model, tasks, prompts, available information, tools, budget and recovery features unless one is explicitly the treatment.
+6. **Execute and preserve**: record versions, seeds, raw traces, tool side effects, wall time, token counts, cost and failures. Keep deterministic mock tests separate from stochastic model evaluations.
+7. **Analyze uncertainty**: present denominators, effect sizes, confidence intervals or run-to-run variation; disclose negative results and threats to validity.
+8. **Publish one small iteration**: research note, runnable experiment, data, limitations, next question, and small PR/commit.
+
+## 2. What 'falsifiable' means
+
+A hypothesis is falsifiable when a feasible observation could contradict its prediction. It is not enough to say "State makes the Agent more reliable." Define *which failure*, *which measure*, *what comparison* and *what outcome would count against the claim*.
+
+Template:
+- **RQ**: Under [workload + failure condition], does [mechanism] change [observable outcome] compared with [baseline]?
+- **H0**: No improvement on the pre-registered primary outcome.
+- **H1**: [Direction and magnitude where justified].
+- **Counterevidence**: [A result that rejects or fails to support H1].
+- **Boundary**: [Model, tasks, execution environment, safety constraints].
+- **Confounders**: [Model randomness, tool latency, retries, caching, task difficulty].
+- **Decision**: support / not supported / inconclusive, with uncertainty.
+
+A null result does not prove two methods are identical. Use equivalence/non-inferiority tests only when margins and sufficient statistical power are justified.
+
+## 3. Evidence grades
+
+| Label | Meaning | Allowed claim |
+|---|---|---|
+| O | Official, published specification or docs | What official docs state, within their version |
+| T | Third-party code analysis or public observation | What the investigator reports, not an official guarantee |
+| H | Hypothesis or architectural inference | Explicitly unverified |
+| E-MOCK | Local deterministic simulation | Behavior of the simulation only |
+| E-REAL | Measured real-model/system experiment | Behavior within the tested setup only |
+
+Never treat a source-map leak as an open-source license. No proprietary source dumps, secret tokens, or private user data.
+
+## 4. Experimental controls
+
+Record task IDs, difficulty strata, model/version, temperature, tool schemas, context budget, retry and timeout policy, hardware/runtime, dates, API prices (if applicable), and sample size. Predefine failures, cancellations, and task success by **external oracles**, not the model's self-report.
+
+Use paired task runs when feasible and randomized run ordering. For model evaluations use repeated independent runs and report dispersion; don't overgeneralize from mock demonstrations. Distinguish **quality** (correct outcome), **reliability** (correct execution under disturbance), **sustainability** (productive progress under finite resources), and **efficiency** (cost/latency).
+
+## 5. Publication checklist
+
+- [ ] Precise falsifiable RQ, H0/H1 and pre-registered success criterion
+- [ ] Provenance and evidence grade for each claim
+- [ ] Fair baselines, confounders and negative controls documented
+- [ ] Reproduction command and version-locked environment
+- [ ] Raw traces, summary data and any exclusions published
+- [ ] Results supported by exact denominators; negative results reported
+- [ ] Threats to validity, copyright/ethics considerations
+- [ ] No unsupported claim about Claude Code's actual behavior
+
+## 6. Deliverable format
+
+`research/<iteration>/question.md` → `sources.md` → `design.md` → `experiments/<iteration>/` → `results/<iteration>/` → `report.md`. Existing Iteration 001 is a provisional simulation; it must not be retroactively presented as pre-registered.
