@@ -32,6 +32,7 @@ A null result does not prove two methods are identical. Use equivalence/non-infe
 
 | Label | Meaning | Allowed claim |
 |---|---|---|
+| S | Source-verified: original implementation artifact independently authenticated and inspected | What the inspected source directly supports for the pinned version, subject to paths/feature gates |
 | O | Official, published specification or docs | What official docs state, within their version |
 | T | Third-party code analysis or public observation | What the investigator reports, not an official guarantee |
 | H | Hypothesis or architectural inference | Explicitly unverified |
@@ -78,3 +79,7 @@ Before adding an experiment or a major implementation path, evaluate the [three-
 ## 10. Observation tooling vs empirical results
 
 Test success of an NDJSON parser on synthetic fixtures does **not** count as a live Claude Code trace. Reports must explicitly separate: official specification, source-analysis hypothesis, synthetic instrumentation tests, and observed versioned product behavior. No live-model conclusion without a recorded authenticated execution.
+
+## 11. Source claim authentication and rights
+
+A leaked or accidentally published source artifact may carry high evidentiary value **if independently authenticated**. This is separate from licensing and redistribution rights. Do not equate third-party source analysis with direct inspection. Record exact version, publisher provenance, original artifact hashes, file/symbol and runtime path before applying **S (source-verified)**. Otherwise use **T (third-party analysis)** or **H (hypothesis)**. Never republish proprietary source dumps. See [A0-03 claim registry](research/A0-03-source-control-flow/SOURCE_CLAIMS.md).
