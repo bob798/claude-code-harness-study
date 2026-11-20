@@ -13,3 +13,4 @@ jobs:
       - run: python -m unittest discover -s experiments/loop_recovery -p 'test_*.py' -v
       - run: python -m unittest discover -s experiments/r1_state -p 'test_*.py' -v
       - run: python -m unittest discover -s experiments/r1_transitions -p 'test_*.py' -v
+      - run: python -m unittest discover -s experiments/r1_recovery -p 'test_*.py' -v
