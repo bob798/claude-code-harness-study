@@ -2,9 +2,13 @@
 
 **Evidence-first analysis, independent implementations, and reproducible experiments for LLM Agent Harness engineering.**
 
-[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
+[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Research scope gate](RESEARCH_GATE.md) · [A0-01 evidence map](research/A0-01-agent-loop-path/REPORT.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
+
+## Current mainline: A0-01 evidence-first Agent Loop mapping
+
+[**A0-01 report**](research/A0-01-agent-loop-path/REPORT.md) establishes a claim-by-claim distinction between official Claude Code behaviors and third-party source analysis of the reported v2.1.88 snapshot. [**A0-02 entry criteria**](research/A0-01-agent-loop-path/NEXT_STEPS.md) specify observable CLI/SDK traces and version checks. [**Scope gate**](RESEARCH_GATE.md) blocks unrelated runtime infrastructure work. The prior R1 simulations remain exploratory side experiments, not Claude Code behavior verification.
 
 ## What you can reproduce now
 
