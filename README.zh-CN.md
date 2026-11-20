@@ -32,3 +32,9 @@
 [研究报告](research/A0-01-agent-loop-path/A0-02-REPORT.md) · [安全采集步骤](research/A0-01-agent-loop-path/a0_02/RUNBOOK.md)
 
 官方 CLI 支持 `stream-json` 工具调用与结果事件。但当前研究环境缺少 `claude` 可执行文件和认证信息，因此**没有执行任何真实 Claude Code 任务**；本轮完成事件摘要工具及 4 个合成数据单元测试。下一步需在具备 Claude Code 的独立环境采集匿名化真实轨迹。
+
+## A0-02b · 公开真实会话数据路线
+
+[公开样本核查报告](research/A0-01-agent-loop-path/A0-02B-REPORT.md) · [数据来源](research/A0-01-agent-loop-path/a0_02/DATA_SOURCES.md) · [Session JSONL 解析器](research/A0-01-agent-loop-path/a0_02/session_analyzer.py)
+
+已检查 Trace Commons 上的 Claude Code v2.1.177 公开会话展示，能看到工具调用与中断标记。当前环境无法下载完整原始文件，因此**未宣称完成真实会话全量指标统计**。新增适配器与 5 项合成数据测试均已完成；下一步需要固定数据集版本并取得可复算的摘要。
