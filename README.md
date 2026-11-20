@@ -6,6 +6,14 @@
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
+## A0-05: expanded evidence survey (2026-11-21)
+
+[**31-item literature audit**](research/A0-05-literature-expansion/SEARCH_REPORT.md) · [**priority reading and next research path**](research/A0-05-literature-expansion/PRIORITY_PATH.md)
+
+Expanded beyond Claude Code v2.1.88 reverse-engineering posts to first-party engineering decisions, independently controlled harness evaluations, cross-scaffold studies, and public real-session evidence. **Key synthesis:** Loop activation/termination, model decision authority, runtime reentry, session/context persistence, action authorization, and independent task verification are **separate research dimensions**. Across available studies, *harness effects are conditional on workload, model and budgets*; no general causal superiority of a Claude Code-style `while` over Goose-style `step` is established.
+
+**Recommendation:** prioritize a paired **model-stop vs independent-goal-verification** evaluation for task effectiveness; keep reentry/approval as a narrowly scoped runtime-overhead experiment. Do not keep generating toy parity tests and generalize from pass counts.
+
 ## A0-04-03: pinned open benchmark vectors and Rungta article audit
 
 [**A0-04-03 benchmark comparison**](research/A0-04-loop-comparison/A0-04-03-REPORT.md) · [**Reusable adapter and tests**](experiments/a0_04_03_bench/benchmark.py) · [**Results**](results/a0-04-03-adapted-bench.json) · [**Rungta architecture essay audit**](research/A0-03-source-control-flow/RUNGTA_ARTICLE_AUDIT.md)
