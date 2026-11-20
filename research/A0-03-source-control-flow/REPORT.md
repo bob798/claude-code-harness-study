@@ -86,3 +86,7 @@ This is a *synthesis of sourced hypotheses* and public API semantics, **not a so
 - **Follow-on:** A1-01: compare alternative Loop mechanisms for one narrowly defined outcome after A0-03b resolves the relevant control path.
 
 Sources: [source claim matrix](SOURCE_CLAIMS.md) · [scope gate](../../RESEARCH_GATE.md) · [decision log](../02-agent-loop/DECISION_LOG.md).
+
+## Addendum: community reuse and controlled alternatives (A0-03b)
+
+The architecture inventory has expanded to VILA-Lab, cablate and 6551Team, with OpenHands (stateless event steps), Goose (reentrant state-machine proposal) and LangGraph (graph and functional durable execution) as explicit alternatives. Existing empirical harness ablations (e.g., arXiv:2609.20804) do not isolate loop representation. **No performance superiority is inferred.** See [community inventory](COMMUNITY_REUSE.md), [alternative designs](ALTERNATIVE_DESIGNS.md), and [evaluation plan](EVALUATION_PLAN.md).
