@@ -1,0 +1,19 @@
+{
+  "experiment": "lost-tool-reply",
+  "environment": "deterministic mocked service, no model calls",
+  "baseline": {
+    "strategy": "blind-retry",
+    "attempts": 2,
+    "effects": 2
+  },
+  "treatment": {
+    "strategy": "stable-idempotency-key",
+    "attempts": 2,
+    "effects": 1
+  },
+  "limitations": [
+    "toy simulator",
+    "not a Claude Code execution trace",
+    "does not measure general task success or latency"
+  ]
+}
