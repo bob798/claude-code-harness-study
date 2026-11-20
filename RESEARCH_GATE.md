@@ -54,3 +54,7 @@ Stop adding experiments if: (1) no Claude-specific evidence path; (2) mechanism 
 - G1: **pass**: reconstruct model-call, tool dispatch, tool-result feedback and stop/cancel boundaries.
 - G2: **not applicable**: A0-01 is an evidence mapping phase, not a new code experiment.
 - Result: **MAINLINE**; generate control-flow evidence and unresolved-claims list; defer SQLite transaction experiments.
+
+## Source-verified evidence check (when claiming S)
+
+Evidence gate G0 also requires source authentication: original artifact and provenance, pinned version/hash, function-level direct inspection, applicable feature gates and branch conditions, and rights-aware original reporting. Do not upgrade a third-party analysis to S solely because it cites leaked source; see [A0-03](research/A0-03-source-control-flow/SOURCE_CLAIMS.md).
