@@ -18,3 +18,4 @@ jobs:
       - run: python -m unittest discover -s research/A0-01-agent-loop-path/a0_02 -p 'test_session_analyzer.py' -v
       - run: python -m unittest discover -s experiments/a0_04_loop_comparison -p 'test_*.py' -v
       - run: python -m unittest discover -s experiments/a0_04_02_approval -p 'test_*.py' -v
+      - run: python -m unittest discover -s experiments/a0_04_03_bench -p 'test_*.py' -v
