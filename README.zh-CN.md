@@ -62,3 +62,9 @@
 [基准适配研究报告](research/A0-04-loop-comparison/A0-04-03-REPORT.md) · [Vikash Rungta 架构文章核查](research/A0-03-source-control-flow/RUNGTA_ARTICLE_AUDIT.md)
 
 本地 11 项测试通过；两种独立模拟控制器分别通过 21 个 AgentBench **衍生输入向量**和 10 个本地扩展审批边界场景。这不是上游官方基准得分，也未调用真实 Claude Code/Goose。发现独立快照下取消与审批竞争可导致过期执行的构造反例。Rungta 2026-02-17 的文章适合研究模型自主性与 Harness 强制约束；不能作为 v2.1.88 泄露源码的直接证据。**模型决策权和 Loop 可重入性是两个独立架构维度。**
+
+## A0-05：扩展 Claude Code Harness 研究资料（2026-11-21）
+
+[31 项参考资料与证据审计](research/A0-05-literature-expansion/SEARCH_REPORT.md) · [优先阅读路径及下一步实验](research/A0-05-literature-expansion/PRIORITY_PATH.md)
+
+本轮新增官方 Loop 触发/停止类型、Managed Agents 事件会话设计、Auto Mode 权限拒绝反馈、上下文重置与独立评估器，并梳理同模型受控 Harness 研究。Loop 触发/停止、模型决策权、运行时可重入、状态/上下文、权限与独立任务验收应拆成独立实验维度。目前没有证据证明 `while` 控制语法本身必然优于可重入 `step`。建议优先进行“模型宣称完成 vs 独立验收”的对照实验；可重入性继续独立测控制权交接与开销。
