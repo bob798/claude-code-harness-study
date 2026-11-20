@@ -44,3 +44,9 @@
 [源码分析报告](research/A0-03-source-control-flow/REPORT.md) · [证据与函数登记](research/A0-03-source-control-flow/SOURCE_CLAIMS.md)
 
 已核验 v2.1.88 意外发布 Source Map 的历史事件，并读取固定版本的两份第三方架构分析。目前并**未**独立取得、校验和检查原始 Source Map，因此暂时没有任何函数级事实升级为“经源码核验（S）”；所有内部函数对应关系仍标为第三方分析（T）。允许将经验证源码作为强证据，但不意味着可以再分发专有源码。
+
+## A0-03b：复用社区结论并比较替代设计
+
+[现有研究清单](research/A0-03-source-control-flow/COMMUNITY_REUSE.md) · [七种 Loop 架构及取舍](research/A0-03-source-control-flow/ALTERNATIVE_DESIGNS.md) · [可证伪对照实验计划](research/A0-03-source-control-flow/EVALUATION_PLAN.md)
+
+已有社区对 Claude Code v2.1.88 进行系统性分析；OpenHands、Goose、LangGraph 提供不同的单步事件、可重入状态机及显式图/函数式持久化实现。现有阅读证据**不能证明** Claude Code 的 while Loop 因其结构而具有更高成功率或更低成本。后续只做严格控制变量的最小比较，不重复构造大型框架。
