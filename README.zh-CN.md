@@ -56,3 +56,9 @@
 [实验报告](research/A0-04-loop-comparison/REPORT.md) · [代码](experiments/a0_04_loop_comparison/experiment.py) · [结果](results/a0-04-pilot.json)
 
 本地 4 项测试通过，真实子进程在第二轮完成持久化后被 SIGKILL 终止，再由新进程从保存状态恢复。两种控制方式都正确完成（5 次脚本决策、4 个模拟工具效果）；**同等 Checkpoint 条件下，不能把恢复能力归功于可重入结构本身。** 未调用任何 LLM 或真实 Goose/Claude Code。另核实 Goose 可重入 GDK 已正式实现并发布，不再只是设计提案。
+
+## A0-04-03 公开基准适配与架构文章审计
+
+[基准适配研究报告](research/A0-04-loop-comparison/A0-04-03-REPORT.md) · [Vikash Rungta 架构文章核查](research/A0-03-source-control-flow/RUNGTA_ARTICLE_AUDIT.md)
+
+本地 11 项测试通过；两种独立模拟控制器分别通过 21 个 AgentBench **衍生输入向量**和 10 个本地扩展审批边界场景。这不是上游官方基准得分，也未调用真实 Claude Code/Goose。发现独立快照下取消与审批竞争可导致过期执行的构造反例。Rungta 2026-02-17 的文章适合研究模型自主性与 Harness 强制约束；不能作为 v2.1.88 泄露源码的直接证据。**模型决策权和 Loop 可重入性是两个独立架构维度。**
