@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-20",
+  "kind": "deterministic scripted event replay",
+  "model": "none",
+  "scenarios": 5,
+  "unit_tests_passed": 5,
+  "matched_representation_pairs": 10,
+  "observations": {
+    "cancel_then_crash": {
+      "volatile": {
+        "calls": 2,
+        "effects": 1,
+        "post_cancel_dispatches": 1,
+        "terminal": "completed"
+      },
+      "checkpoint": {
+        "calls": 1,
+        "effects": 1,
+        "post_cancel_dispatches": 0,
+        "terminal": "cancelled"
+      }
+    },
+    "crash_after_commit_before_ack": {
+      "volatile": {
+        "calls": 2,
+        "effects": 1
+      },
+      "checkpoint": {
+        "calls": 2,
+        "effects": 1
+      }
+    },
+    "normal": {
+      "calls": 1,
+      "effects": 1
+    }
+  },
+  "limitations": [
+    "scripted events rather than true concurrency",
+    "snapshot is idealized atomic",
+    "mock durable idempotency service",
+    "not a Claude Code trace",
+    "no model inference",
+    "no statistics"
+  ]
+}
