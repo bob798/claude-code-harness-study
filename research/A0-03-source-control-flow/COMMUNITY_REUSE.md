@@ -44,3 +44,7 @@ Several GitHub copies of VILA-Lab appear to be forks and are **not independent c
 | [Vikash Rungta's architecture essay (2026-02-17)](https://vrungta.substack.com/p/claude-code-architecture-reverse) + [expanded Markdown](https://github.com/vkr11/ChainOfThought/blob/main/claude_code_architecture.md)
 
 This article is classified as **T-CONCEPT**: useful for the TAOR mental model and model-versus-harness responsibility boundaries, but not direct source authentication or quantitative proof. See [full claim audit](RUNGTA_ARTICLE_AUDIT.md) for qualifications about approval modes, Esc/rewind, fixed context thresholds, and architectural axes.
+
+## A0-05 expanded literature scan
+
+[A0-05 evidence survey](../A0-05-literature-expansion/SEARCH_REPORT.md) expands this inventory to official Anthropic engineering write-ups, additional source-derived books, source-study papers, same-model harness ablations and real-session data. [Prioritized reading & experiment mapping](../A0-05-literature-expansion/PRIORITY_PATH.md) explains what the additional references change about experimental priorities. Do not count repeated forks or summaries of the same source-map snapshot as independent findings.
