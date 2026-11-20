@@ -50,3 +50,9 @@
 [现有研究清单](research/A0-03-source-control-flow/COMMUNITY_REUSE.md) · [七种 Loop 架构及取舍](research/A0-03-source-control-flow/ALTERNATIVE_DESIGNS.md) · [可证伪对照实验计划](research/A0-03-source-control-flow/EVALUATION_PLAN.md)
 
 已有社区对 Claude Code v2.1.88 进行系统性分析；OpenHands、Goose、LangGraph 提供不同的单步事件、可重入状态机及显式图/函数式持久化实现。现有阅读证据**不能证明** Claude Code 的 while Loop 因其结构而具有更高成功率或更低成本。后续只做严格控制变量的最小比较，不重复构造大型框架。
+
+## A0-04：轻量 Loop 与可重入单步的首次公平对照
+
+[实验报告](research/A0-04-loop-comparison/REPORT.md) · [代码](experiments/a0_04_loop_comparison/experiment.py) · [结果](results/a0-04-pilot.json)
+
+本地 4 项测试通过，真实子进程在第二轮完成持久化后被 SIGKILL 终止，再由新进程从保存状态恢复。两种控制方式都正确完成（5 次脚本决策、4 个模拟工具效果）；**同等 Checkpoint 条件下，不能把恢复能力归功于可重入结构本身。** 未调用任何 LLM 或真实 Goose/Claude Code。另核实 Goose 可重入 GDK 已正式实现并发布，不再只是设计提案。
