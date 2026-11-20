@@ -28,3 +28,10 @@ Research decisions are first-class outputs. Preserve **initial hypothesis → ob
 ## Caution
 
 Changing the research direction **after** seeing pilot evidence is valid scientific exploration. Treat the changed hypothesis as exploratory until preregistered and tested on new data. Do not silently re-label an exploratory result as confirmatory.
+
+## A0-04-02 · 2026-11-21 — approval boundary, benchmark audit
+- **Initial direction:** compare long-lived generator and host-reentrant step for user approval, denial, cancellation and process-separated signal handling under equal persistence and policy.
+- **Observation:** six scripted local tests passed; both arms produced equivalent effects and model-call counts. Generator arm reconstructs from snapshot on invocation, narrowing the control difference. External open-source suites exist (Agent Action Boundary Benchmark, AgentBench, AgentDojo, harness-bench, Terminal-Bench), but none was executed in this round.
+- **Interpretation:** authorization semantics and state guards, not the API surface alone, explain parity. Synthetic tests cannot establish real-world performance or structure superiority.
+- **Decision/change:** label tests regression fixtures, add external benchmark inventory, prioritize independent approval-to-effect vectors, action mutation, stale approvals and real concurrent signal races. Keep real product comparison separate.
+- **Next falsification:** use a pinned third-party suite with independent effect oracle and matched controllers; track exact upstream tests vs custom adaptations, resume complexity and runtime overhead.
