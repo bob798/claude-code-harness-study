@@ -26,3 +26,9 @@
 [实验报告](research/02-agent-loop/R1-ITERATION-03.md) · [模型和源码依据说明](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [研究决策日志](research/02-agent-loop/DECISION_LOG.md)
 
 本轮**不调用任何 LLM**。五个脚本化事件场景显示：同等策略下，类型化 State 与普通局部状态表现一致；Checkpoint 保存取消状态后，重启不再发起新的已取消工具操作，但外部操作已提交、回执丢失时仍需幂等与核对。不是 Claude Code 运行实测。
+
+## A0-02 · 真实 Claude Code 行为观察
+
+[研究报告](research/A0-01-agent-loop-path/A0-02-REPORT.md) · [安全采集步骤](research/A0-01-agent-loop-path/a0_02/RUNBOOK.md)
+
+官方 CLI 支持 `stream-json` 工具调用与结果事件。但当前研究环境缺少 `claude` 可执行文件和认证信息，因此**没有执行任何真实 Claude Code 任务**；本轮完成事件摘要工具及 4 个合成数据单元测试。下一步需在具备 Claude Code 的独立环境采集匿名化真实轨迹。
