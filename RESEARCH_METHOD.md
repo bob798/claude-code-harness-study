@@ -60,3 +60,9 @@ Use paired task runs when feasible and randomized run ordering. For model evalua
 ## 6. Deliverable format
 
 `research/<iteration>/question.md` → `sources.md` → `design.md` → `experiments/<iteration>/` → `results/<iteration>/` → `report.md`. Existing Iteration 001 is a provisional simulation; it must not be retroactively presented as pre-registered.
+
+## 7. Decision log is mandatory / 每轮研究决策必须留痕
+
+For every completed iteration, append to the topic-specific `DECISION_LOG.md`: original research question and expectation, observed evidence (including negative results), competing interpretation, explicit change in direction, why the change is justified, and the next test capable of disproving the revised hypothesis. Do not erase previous direction changes or relabel post-hoc exploration as preregistered evidence. [R1 example](research/02-agent-loop/DECISION_LOG.md).
+
+**Terminology:** prefer **执行安全约束** (execution safety constraints) for reader-facing Chinese explanations, introduce formal *invariant* in parentheses when technically required, and use **执行安全约束违规率** for the measured proportion. A state representation is distinct from enforcement of those rules.
