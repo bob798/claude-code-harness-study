@@ -1,0 +1,57 @@
+{
+  "experiment": "A0-04-PILOT",
+  "date": "2026-11-20",
+  "type": "Independent Python controller pilot, actual subprocess SIGKILL after persisted turn 2",
+  "model_provider": null,
+  "model_id": null,
+  "model_api_calls": 0,
+  "mock_decisions_per_successful_run": 5,
+  "unique_tool_effects_per_run": 4,
+  "shared_policy": "atomic JSON snapshot after each completed turn, stable operation IDs, same scripted policy",
+  "scenarios": [
+    "normal",
+    "kill_after_turn_2_then_resume"
+  ],
+  "results": {
+    "streaming": {
+      "normal": {
+        "correct": true,
+        "turns": 5,
+        "model_calls": 5,
+        "tool_effects": 4
+      },
+      "after_sigkill": {
+        "correct": true,
+        "turns": 5,
+        "model_calls": 5,
+        "tool_effects": 4
+      }
+    },
+    "reentrant": {
+      "normal": {
+        "correct": true,
+        "turns": 5,
+        "model_calls": 5,
+        "tool_effects": 4
+      },
+      "after_sigkill": {
+        "correct": true,
+        "turns": 5,
+        "model_calls": 5,
+        "tool_effects": 4
+      }
+    }
+  },
+  "normal_parity": true,
+  "restart_parity": true,
+  "unit_tests_passed": 4,
+  "unit_tests_total": 4,
+  "limitations": [
+    "not actual Claude Code or Goose runtime",
+    "scripted decisions not LLM",
+    "SIGKILL after checkpoint, not mid-tool",
+    "same checkpoint semantics in both arms",
+    "no timing or statistics",
+    "no real external effects"
+  ]
+}
