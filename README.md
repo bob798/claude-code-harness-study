@@ -2,7 +2,7 @@
 
 **Evidence-first analysis, independent implementations, and reproducible experiments for LLM Agent Harness engineering.**
 
-[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
+[中文说明](README.zh-CN.md) · [Research plan](PLAN.md) · [Research method](RESEARCH_METHOD.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
@@ -37,6 +37,15 @@ python -m unittest discover -s experiments/r1_transitions -p 'test_*.py' -v
 python experiments/r1_transitions/experiment.py
 ```
 
+## R1 iteration 03: checkpoint vs state representation
+
+Deterministic **mock** crash/cancel event replay (5 scenarios, 4 arms, 5 unit tests). State as a dataclass vs local dictionary changed no results when policies matched. In a deliberately constructed cancel-then-crash sequence, a checkpoint preserved cancellation and blocked redispatch; a volatile variant lost it. **No LLM calls were made.** Checkpoint alone does not resolve ambiguous committed tool effects. [R1-03 report](research/02-agent-loop/R1-ITERATION-03.md) · [Source/model attribution](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md).
+
+```bash
+python -m unittest discover -s experiments/r1_recovery -p 'test_*.py' -v
+python experiments/r1_recovery/experiment.py
+```
+
 ## Research method
 
 Every iteration follows: **question → public evidence → architectural interpretation → implementation → baseline comparison → reproducible result → limitations**.
@@ -52,7 +61,7 @@ Claims are labeled:
 | Iteration | Question | Status |
 |---|---|---|
 | 001 · Agent Loop | What happens when a tool result is lost after execution? | Mock experiment available |
-| 002 · State and recovery | Does explicit state improve recovery when capabilities are controlled? | Planned |
+| 002 · State and recovery | Separate typed State, guards, and checkpoint effects | R1-01/02/03 exploratory mock studies available |
 | 003 · Tool execution | When are parallelism and retries safe? | Planned |
 | 004 · Context compaction | How do token savings trade off against constraint retention? | Planned |
 | 005 · Harness evaluation | Which mechanisms improve reliability across real tasks? | Planned |
