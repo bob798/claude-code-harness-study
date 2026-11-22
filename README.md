@@ -2,13 +2,13 @@
 
 **Evidence-first analysis, independent implementations, and reproducible experiments for LLM Agent Harness engineering.**
 
-[中文说明](README.zh-CN.md) · [References library](references/README.md) · [Research plan](PLAN.md) · [Research rules](RESEARCH_RULES.md) · [Research method](RESEARCH_METHOD.md) · [Research scope gate](RESEARCH_GATE.md) · [A0-01 evidence map](research/A0-01-agent-loop-path/REPORT.md) · [A0-03 source audit](research/A0-03-source-control-flow/REPORT.md) · [Existing research](research/A0-03-source-control-flow/COMMUNITY_REUSE.md) · [Design alternatives](research/A0-03-source-control-flow/ALTERNATIVE_DESIGNS.md) · [A0-04 first controlled experiment](research/A0-04-loop-comparison/REPORT.md) · [A0-02 observability report](research/A0-01-agent-loop-path/A0-02-REPORT.md) · [A0-02b public traces](research/A0-01-agent-loop-path/A0-02B-REPORT.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
+[中文说明](README.zh-CN.md) · [References library](references/README.md) · [Research plan](PLAN.md) · [Research rules](RESEARCH_RULES.md) · [A0-01 evidence map](research/A0-01-agent-loop-path/REPORT.md) · [A0-03 source audit](research/A0-03-source-control-flow/REPORT.md) · [Existing research](research/A0-03-source-control-flow/COMMUNITY_REUSE.md) · [Design alternatives](research/A0-03-source-control-flow/ALTERNATIVE_DESIGNS.md) · [A0-04 first controlled experiment](research/A0-04-loop-comparison/REPORT.md) · [A0-02 observability report](research/A0-01-agent-loop-path/A0-02-REPORT.md) · [A0-02b public traces](research/A0-01-agent-loop-path/A0-02B-REPORT.md) · [Falsifiable Agent Loop questions](research/02-agent-loop/questions.md) · [R1 study](research/02-agent-loop/R1-PROTOCOL.md) · [R1 iteration 02](research/02-agent-loop/R1-ITERATION-02.md) · [R1 iteration 03](research/02-agent-loop/R1-ITERATION-03.md) · [Model & source provenance](research/02-agent-loop/MODEL_AND_SOURCE_PROVENANCE.md) · [Decision log](research/02-agent-loop/DECISION_LOG.md) · [Agent Loop analysis](docs/01-agent-loop/analysis.md) · [Evidence ledger](docs/01-agent-loop/evidence.md)
 
 > Independent research project. Not affiliated with or endorsed by Anthropic. No leaked or proprietary Claude Code source code is redistributed here.
 
 ## Research rules: L1–L6 + six questions
 
-[**RESEARCH_RULES.md**](RESEARCH_RULES.md) defines six growth levels from concept literacy to business validation, a mandatory six-question design analysis, source/evidence constraints, fair experiment controls, and study stop rules. [RESEARCH_METHOD.md](RESEARCH_METHOD.md) and [RESEARCH_GATE.md](RESEARCH_GATE.md) implement the procedure and admission gates.
+[**RESEARCH_RULES.md**](RESEARCH_RULES.md) is the single normative research document: L1–L6, six-question analysis, academic methodology attribution, evidence grades, reproducible research procedure, G0/G1/G2 admission gates, and completion rules. The older Research Method/Gate files were merged into it.
 
 ## A0-05: expanded evidence survey (2026-11-21)
 
@@ -56,7 +56,7 @@ We confirmed the historical v2.1.88 source-map exposure and cross-checked two pi
 
 ## Current mainline: A0-01 evidence-first Agent Loop mapping
 
-[**A0-01 report**](research/A0-01-agent-loop-path/REPORT.md) establishes a claim-by-claim distinction between official Claude Code behaviors and third-party source analysis of the reported v2.1.88 snapshot. [**A0-02 entry criteria**](research/A0-01-agent-loop-path/NEXT_STEPS.md) specify observable CLI/SDK traces and version checks. [**Scope gate**](RESEARCH_GATE.md) blocks unrelated runtime infrastructure work. The prior R1 simulations remain exploratory side experiments, not Claude Code behavior verification.
+[**A0-01 report**](research/A0-01-agent-loop-path/REPORT.md) establishes a claim-by-claim distinction between official Claude Code behaviors and third-party source analysis of the reported v2.1.88 snapshot. [**A0-02 entry criteria**](research/A0-01-agent-loop-path/NEXT_STEPS.md) specify observable CLI/SDK traces and version checks. [**Scope gate**](RESEARCH_RULES.md#14-g0g1g2-研究准入门槛) blocks unrelated runtime infrastructure work. The prior R1 simulations remain exploratory side experiments, not Claude Code behavior verification.
 
 ## A0-02: observing the released CLI
 
