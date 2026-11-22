@@ -65,6 +65,6 @@
 
 ## A0-05：扩展 Claude Code Harness 研究资料（2026-11-21）
 
-[31 项参考资料与证据审计](research/A0-05-literature-expansion/SEARCH_REPORT.md) · [优先阅读路径及下一步实验](research/A0-05-literature-expansion/PRIORITY_PATH.md)
+[12 份优先参考资料（独立 Markdown）](research/A0-05-literature-expansion/TOP_12_REFERENCES.md) · [31 项参考资料与证据审计](research/A0-05-literature-expansion/SEARCH_REPORT.md) · [优先阅读路径及下一步实验](research/A0-05-literature-expansion/PRIORITY_PATH.md)
 
 本轮新增官方 Loop 触发/停止类型、Managed Agents 事件会话设计、Auto Mode 权限拒绝反馈、上下文重置与独立评估器，并梳理同模型受控 Harness 研究。Loop 触发/停止、模型决策权、运行时可重入、状态/上下文、权限与独立任务验收应拆成独立实验维度。目前没有证据证明 `while` 控制语法本身必然优于可重入 `step`。建议优先进行“模型宣称完成 vs 独立验收”的对照实验；可重入性继续独立测控制权交接与开销。
