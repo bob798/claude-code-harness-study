@@ -85,7 +85,7 @@ This is a *synthesis of sourced hypotheses* and public API semantics, **not a so
 - **Next:** A0-03b: verify provenance and precise function-level relationships against a legally accessible, authenticated v2.1.88 source artifact or other authorized primary material; publish original descriptions, not source. If unavailable, use publicly documented behavior and clearly remain at T.
 - **Follow-on:** A1-01: compare alternative Loop mechanisms for one narrowly defined outcome after A0-03b resolves the relevant control path.
 
-Sources: [source claim matrix](SOURCE_CLAIMS.md) · [scope gate](../../RESEARCH_RULES.md#14-g0g1g2-研究准入门槛) · [decision log](../02-agent-loop/DECISION_LOG.md).
+Sources: [source claim matrix](SOURCE_CLAIMS.md) · [scope gate](../../RESEARCH_RULES.md#7-g0g1g2-研究准入门槛) · [decision log](../02-agent-loop/DECISION_LOG.md).
 
 ## Addendum: community reuse and controlled alternatives (A0-03b)
 
