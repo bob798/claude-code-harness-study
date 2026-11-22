@@ -8,7 +8,7 @@
 
 ## A0-05: expanded evidence survey (2026-11-21)
 
-[**31-item literature audit**](research/A0-05-literature-expansion/SEARCH_REPORT.md) · [**priority reading and next research path**](research/A0-05-literature-expansion/PRIORITY_PATH.md)
+[**12 priority references (Chinese)**](research/A0-05-literature-expansion/TOP_12_REFERENCES.md) · [**31-item literature audit**](research/A0-05-literature-expansion/SEARCH_REPORT.md) · [**priority reading and next research path**](research/A0-05-literature-expansion/PRIORITY_PATH.md)
 
 Expanded beyond Claude Code v2.1.88 reverse-engineering posts to first-party engineering decisions, independently controlled harness evaluations, cross-scaffold studies, and public real-session evidence. **Key synthesis:** Loop activation/termination, model decision authority, runtime reentry, session/context persistence, action authorization, and independent task verification are **separate research dimensions**. Across available studies, *harness effects are conditional on workload, model and budgets*; no general causal superiority of a Claude Code-style `while` over Goose-style `step` is established.
 
