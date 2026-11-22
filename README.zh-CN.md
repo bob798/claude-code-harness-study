@@ -6,9 +6,9 @@
 
 **[研究规则（L1–L6）](RESEARCH_RULES.md)** · **[调研资料与引用目录](references/README.md)**
 
-## 研究规则：六级能力与六问法
+## 研究规则：六级能力、六问法与学术出处
 
-[**RESEARCH_RULES.md**](RESEARCH_RULES.md) 明确 L1 概念理解到 L6 业务落地的最低证据要求，并规定每项机制必须回答“问题、基线、不足、替代、取舍、验证”六个问题。实验必须满足现有 [研究方法](RESEARCH_METHOD.md) 和 [准入门槛](RESEARCH_GATE.md)，不得把 Mock 测试、第三方源码解读或模型自称完成当作真实效果验证。
+[**RESEARCH_RULES.md**](RESEARCH_RULES.md) 明确 L1 概念理解到 L6 业务落地的最低证据要求，并规定每项机制必须回答“问题、基线、不足、替代、取舍、验证”六个问题。实验必须满足本文件内的 [研究流程与证据分级](RESEARCH_RULES.md#10-研究工作流8-个执行动作) 及 [G0/G1/G2 准入门槛](RESEARCH_RULES.md#14-g0g1g2-研究准入门槛)，不得把 Mock 测试、第三方源码解读或模型自称完成当作真实效果验证。
 
 ## 从哪里开始
 
