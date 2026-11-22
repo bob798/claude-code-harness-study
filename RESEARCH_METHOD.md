@@ -2,6 +2,8 @@
 
 > Version 1.0 · 2026-11-20. This document governs every research iteration in this repository. A finding must be auditable, falsifiable and independently reproducible.
 
+**Normative study goals, L1–L6 evidence requirements, and mandatory six-question analysis are defined in [RESEARCH_RULES.md](RESEARCH_RULES.md).** This file details the methodological workflow and publication requirements. Apply both.
+
 ## 1. Research loop
 
 1. **Define a bounded question**: specify system boundary, workload, independent variable, outcomes, and exclusion criteria.
