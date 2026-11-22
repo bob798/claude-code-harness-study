@@ -73,4 +73,4 @@ This is an evidence mapping milestone, **not** an empirical confirmation. The fi
 Previous path: local State → transition checks → mock checkpoint → SQLite durability.  
 Corrected mainline: official behavior → v2.1.88 reported module boundaries → observable test trace → targeted design alternatives → falsifiable experiment.
 
-[Decision log](../02-agent-loop/DECISION_LOG.md) · [Research gate](../../RESEARCH_RULES.md#14-g0g1g2-研究准入门槛).
+[Decision log](../02-agent-loop/DECISION_LOG.md) · [Research gate](../../RESEARCH_RULES.md#7-g0g1g2-研究准入门槛).
