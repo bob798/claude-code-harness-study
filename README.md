@@ -56,7 +56,7 @@ We confirmed the historical v2.1.88 source-map exposure and cross-checked two pi
 
 ## Current mainline: A0-01 evidence-first Agent Loop mapping
 
-[**A0-01 report**](research/A0-01-agent-loop-path/REPORT.md) establishes a claim-by-claim distinction between official Claude Code behaviors and third-party source analysis of the reported v2.1.88 snapshot. [**A0-02 entry criteria**](research/A0-01-agent-loop-path/NEXT_STEPS.md) specify observable CLI/SDK traces and version checks. [**Scope gate**](RESEARCH_RULES.md#14-g0g1g2-研究准入门槛) blocks unrelated runtime infrastructure work. The prior R1 simulations remain exploratory side experiments, not Claude Code behavior verification.
+[**A0-01 report**](research/A0-01-agent-loop-path/REPORT.md) establishes a claim-by-claim distinction between official Claude Code behaviors and third-party source analysis of the reported v2.1.88 snapshot. [**A0-02 entry criteria**](research/A0-01-agent-loop-path/NEXT_STEPS.md) specify observable CLI/SDK traces and version checks. [**Scope gate**](RESEARCH_RULES.md#7-g0g1g2-研究准入门槛) blocks unrelated runtime infrastructure work. The prior R1 simulations remain exploratory side experiments, not Claude Code behavior verification.
 
 ## A0-02: observing the released CLI
 
