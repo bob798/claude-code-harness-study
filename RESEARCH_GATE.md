@@ -2,6 +2,8 @@
 
 Version: 1.0 · 2026-11-20. Purpose: prevent scope creep away from **Claude Code execution-path analysis → design alternatives → targeted falsifiable experiment**.
 
+See [RESEARCH_RULES.md](RESEARCH_RULES.md) for the L1–L6 growth standard, mandatory design questions and stop rules. This document implements the study admission gate; it does not replace those rules.
+
 ## Three gates (not a decorative score)
 
 ### G0: Evidence and ethics — mandatory
